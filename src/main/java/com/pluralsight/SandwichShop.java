@@ -16,13 +16,11 @@ public class SandwichShop {
         double discount1Price2 = basePrice2 - (basePrice2 * 0.1);
         double discount2Price2 = basePrice2 - (basePrice2 * 0.2);
 
-        //Start output + input process
+ //Start output + input process
 
         System.out.println("Welcome to sandwich shop!\n");
 
-
-
-        //Set choices / menu
+     //Set choices / menu
         System.out.println("We have the following sizes:");
         System.out.println("1: Regular ....  $" + basePrice1);
         System.out.println("2: Large   ....  $" + basePrice2);
@@ -33,10 +31,45 @@ public class SandwichShop {
         // Clear Buffer
         choice.nextLine();
 
-        //set option for discount
+     //set option for discount
         System.out.println("We have some dicounts, would you like to check eligibility?\n Y (Yes)\n N (No) ");
         String check = choice.nextLine();
 
+     //set price display
+
+        /* calculate discount if Customer wants to
+         * this applies discount automatically, if customer is eligible
+         * code could be slightly modified to apply discount upon customer's request
+         */
+        if (check.equalsIgnoreCase("Y")) {
+            System.out.println("What is your age? ");
+            int age = choice.nextInt();
+
+            if(age <= 17) {
+                if(size == 1) {
+                    System.out.printf("You get 10%% discounts" + "\n~~Your new total is: $%.2f", discount1Price1);
+                } else if(size == 2) {
+                    System.out.printf("You get 10%% discounts" + "\n~~Your new total is: $%.2f", discount1Price2);
+                }
+
+            } else if(age >= 65) {
+                if(size == 1) {
+                    System.out.printf("You get 20%% discounts" + "\n~~Your new total is: $%.2f", discount2Price1);
+                } else if(size == 2) {
+                    System.out.printf("You get 20%% discounts" + "\n~~Your new total is: $%.2f", discount2Price2);
+                }
+
+                // if customer wants discount but isn't eligible
+            } else {
+                System.out.println("Sorry, you're not eligible for any of our discounts.");
+                if(size == 1) {
+                    System.out.println("Your total is: $" + basePrice1);
+                } else if(size == 2) {
+                    System.out.println("Your total is: $" + basePrice2);
+                }
+            }
+
+        }
     }
 
 }
