@@ -53,7 +53,7 @@ public class SandwichShop {
         System.out.println("We have some dicounts, would you like to check eligibility?\n Y (Yes)\n N (No) ");
         String check = choice.nextLine();
 
-        //set price display
+    //set price display
 
         /* calculate discount if Customer wants to
          * this applies discount automatically, if customer is eligible
@@ -110,12 +110,12 @@ public class SandwichShop {
                 if (size == 1) {
                     System.out.printf("You get 10%% discounts" + "\n~~Your new total is: $%.2f", loadedDiscount1Price1);
                 } else if (size == 2) {
-                    System.out.printf("You get 10%% discounts" + "\n~~Your new total is: $%.2f", loadedDiscount2Price1);
+                    System.out.printf("You get 10%% discounts" + "\n~~Your new total is: $%.2f", loadedDiscount1Price2);
                 }
 
             } else if (age >= 65) {
                 if (size == 1) {
-                    System.out.printf("You get 20%% discounts" + "\n~~Your new total is: $%.2f", loadedDiscount1Price2);
+                    System.out.printf("You get 20%% discounts" + "\n~~Your new total is: $%.2f", loadedDiscount2Price1);
                 } else if (size == 2) {
                     System.out.printf("You get 20%% discounts" + "\n~~Your new total is: $%.2f", loadedDiscount2Price2);
                 }
