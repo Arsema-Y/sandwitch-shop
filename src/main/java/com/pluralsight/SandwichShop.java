@@ -8,13 +8,27 @@ public class SandwichShop {
         //build an input system
         Scanner choice = new Scanner(System.in);
 
-        //pre-set prices
+     //pre-set prices
         double basePrice1 = 5.45;
+        double loadedPrice1 = 1 + basePrice1;
+        //discounts of Price-1
+           //10%
         double discount1Price1 = basePrice1 - (basePrice1 * 0.1);
+        double loadedDiscount1Price1 = loadedPrice1 - (loadedPrice1 * 0.1);
+           //20%
         double discount2Price1 = basePrice1 - (basePrice1 * 0.2);
+        double loadedDiscount2Price1 = loadedPrice1 - (loadedPrice1 * 0.2);
+
         double basePrice2 = 8.95;
+        double loadedPrice2 = 1.75 + basePrice2;
+        //discounts of Price-2
+           // 10%
         double discount1Price2 = basePrice2 - (basePrice2 * 0.1);
+        double loadedDiscount1Price2 = loadedPrice2 - (loadedPrice2 * 0.1);
+           // 20%
         double discount2Price2 = basePrice2 - (basePrice2 * 0.2);
+        double loadedDiscount2Price2 = loadedPrice2 - (loadedPrice2 * 0.2);
+
 
         //Start output + input process
 
@@ -81,7 +95,7 @@ public class SandwichShop {
 
         }
 
-        System.out.println("\nYour sandswich will be ready in a bit, \nWe hope you like your it!");
+        System.out.println("\nYour sandwich will be ready in a bit, \nWe hope you like your it!");
 
     }
 }
