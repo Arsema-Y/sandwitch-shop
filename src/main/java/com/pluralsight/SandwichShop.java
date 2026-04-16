@@ -16,11 +16,11 @@ public class SandwichShop {
         double discount1Price2 = basePrice2 - (basePrice2 * 0.1);
         double discount2Price2 = basePrice2 - (basePrice2 * 0.2);
 
- //Start output + input process
+        //Start output + input process
 
         System.out.println("Welcome to sandwich shop!\n");
 
-     //Set choices / menu
+        //Set choices / menu
         System.out.println("We have the following sizes:");
         System.out.println("1: Regular ....  $" + basePrice1);
         System.out.println("2: Large   ....  $" + basePrice2);
@@ -31,11 +31,11 @@ public class SandwichShop {
         // Clear Buffer
         choice.nextLine();
 
-     //set option for discount
+        //set option for discount
         System.out.println("We have some dicounts, would you like to check eligibility?\n Y (Yes)\n N (No) ");
         String check = choice.nextLine();
 
-     //set price display
+        //set price display
 
         /* calculate discount if Customer wants to
          * this applies discount automatically, if customer is eligible
@@ -45,31 +45,43 @@ public class SandwichShop {
             System.out.println("What is your age? ");
             int age = choice.nextInt();
 
-            if(age <= 17) {
-                if(size == 1) {
+            if (age <= 17) {
+                if (size == 1) {
                     System.out.printf("You get 10%% discounts" + "\n~~Your new total is: $%.2f", discount1Price1);
-                } else if(size == 2) {
+                } else if (size == 2) {
                     System.out.printf("You get 10%% discounts" + "\n~~Your new total is: $%.2f", discount1Price2);
                 }
 
-            } else if(age >= 65) {
-                if(size == 1) {
+            } else if (age >= 65) {
+                if (size == 1) {
                     System.out.printf("You get 20%% discounts" + "\n~~Your new total is: $%.2f", discount2Price1);
-                } else if(size == 2) {
+                } else if (size == 2) {
                     System.out.printf("You get 20%% discounts" + "\n~~Your new total is: $%.2f", discount2Price2);
                 }
 
                 // if customer wants discount but isn't eligible
             } else {
                 System.out.println("Sorry, you're not eligible for any of our discounts.");
-                if(size == 1) {
+                if (size == 1) {
                     System.out.println("Your total is: $" + basePrice1);
-                } else if(size == 2) {
+                } else if (size == 2) {
                     System.out.println("Your total is: $" + basePrice2);
                 }
             }
 
-        }
-    }
+            /* if customer doesn't want discount
+             * display price without discount
+             */
+        } else if (check.equalsIgnoreCase("N")) {
+            if (size == 1) {
+                System.out.println("Your total is: $" + basePrice1);
+            } else if (size == 2) {
+                System.out.println("Your total is: $" + basePrice2);
+            }
 
+        }
+
+        System.out.println("\nYour sandswich will be ready in a bit, \nWe hope you like your it!");
+
+    }
 }
